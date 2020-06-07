@@ -16,5 +16,10 @@ export class ApiService {
     {headers:this.httpHeader}
     );
   }
+  getOneMovie(id):Observable<any>{
+    return this.http.get(this.baseurl+'/movies/'+id+"/", 
+    {headers:this.httpHeader}
+    );
+  }
 
 }

@@ -10,6 +10,9 @@ import { ApiService } from './api.service';
 export class AppComponent {
   movies=[{title:'titanic'}];
   //movies:any;
+  title;
+  desc;
+  year;
   constructor( private api:ApiService){
     this.getMovies();
   }
@@ -25,5 +28,15 @@ export class AppComponent {
     
     );
   }
-
+  movieClicked= (movie)=>{
+    //console.log(movie.id);
+    this.api.getOneMovie(movie.id).subscribe(
+      data =>{
+        console.log(data);
+      },
+      error=>{
+        console.log(error);
+      }
+    );
+  }
 }

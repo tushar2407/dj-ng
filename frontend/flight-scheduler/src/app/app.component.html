@@ -1,9 +1,15 @@
 <h2>List of movies</h2>
 <ul style="list-style: none;">
-  <li *ngFor="let movie of movies" style="border: solid 2px black;display: flex; justify-content: space-evenly; flex-direction: row;" >
+  <li (click)="movieClicked(movie)"  *ngFor="let movie of movies" style="border: solid 2px black;display: flex; justify-content: space-evenly; flex-direction: row;" >
     <h3 >{{movie.id}}</h3>
     <h3 >{{movie.title}}</h3> <br>
     <!--<h3 >{{movie.year}}</h3> <br>
     <h3 >{{movie.desc}}</h3>-->
   </li>
 </ul>
+<!--
+<hr>
+Title<input type="text" [(ngModel)]="title"><br>
+Description<input type="text" [(ngModel)]="desc"><br>
+Year<input type="text" [(ngModel)]="year"><br>
+-->
