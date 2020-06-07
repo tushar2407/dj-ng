@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {from} from 'rxjs';
+
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,6 +16,7 @@ import {from} from 'rxjs';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

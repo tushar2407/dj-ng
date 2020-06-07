@@ -21,5 +21,22 @@ export class ApiService {
     {headers:this.httpHeader}
     );
   }
+  updateMovie(movie):Observable<any>{
+    const body= {title:movie.title, year:movie.year, desc:movie.desc};
+    return this.http.put(this.baseurl+'/movies/'+movie.id+'/',body,
+    {headers:this.httpHeader}
+    );
+  }
+  createMovie(movie):Observable<any>{
+    const body={title:movie.title, year:movie.year, desc:movie.desc};
+    return this.http.post(this.baseurl+"/movies/",body,
+    {headers:this.httpHeader}
+    );
+  }
+  deleteMovie(id):Observable<any>{
+    return this.http.delete(this.baseurl+"/movies/"+id+"/",
+    {headers:this.httpHeader}
+    );
+  }
 
 }
